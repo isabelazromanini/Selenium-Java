@@ -1,4 +1,5 @@
 package Tests;
 
-public class testeHub {
+    public class testeHub {
+        //teste teste
 }
