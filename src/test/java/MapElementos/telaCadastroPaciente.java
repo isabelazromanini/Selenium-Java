@@ -21,8 +21,8 @@ public class telaCadastroPaciente {
     private By campoCns = By.name("codigoCns");
     private By campoEmail = By.name("email");
     private By campoNomeResponsavel = By.name("nomeResponsavel");
-    //ver com o sullivan como fazer no campo telefones
-    private By campoTelefoneTipo = By.xpath("");
+    //ver com o sullivan como fazer no campo telefones - pegar o select
+    private By campoTelefoneTipo = By.xpath("/html/body/div[2]/div[1]/section[2]/form/div[4]/div[1]/div/div[2]/div[1]/select");
     private By campoTelefoneNumero = By.xpath("");
     private By botaoAdicionarTelefone = By.xpath("/html/body/div[2]/div[1]/section[2]/form/div[4]/div[1]/div/div[2]/div[2]/span/button");
     private By campoCep = By.name("endereco.cep");
