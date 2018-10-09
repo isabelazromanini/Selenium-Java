@@ -26,6 +26,7 @@ public class testLogin {
     @Test (description = "fazer login")
         public void login() {
             //teste do login digita login senha e clica no botao para entrar no sistema
+
             telaLogin telaLogin = new telaLogin(driver);
             telaLogin.digitaUsuarioCampo("marcos.rodrigues@face.com.br");
             telaLogin.digitaSenhaCampo("123");

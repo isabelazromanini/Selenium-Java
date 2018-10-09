@@ -35,4 +35,17 @@ public class telaLogin {
         driver.findElement(senhaCampoLogin).sendKeys(senhaCampoDigitado);
     }
 
+
+    public void loginSucesso (String login, String senha){
+        /*this.digitaUsuarioCampo (login);
+        this.digitaSenhaCampo(senha);
+        this.clickBotaoLogin();*/
+
+        driver.findElement(usuarioCampoLogin).clear();
+        driver.findElement(usuarioCampoLogin).sendKeys(login);
+        driver.findElement(senhaCampoLogin).clear();
+        driver.findElement(senhaCampoLogin).sendKeys(senha);
+        driver.findElement(botaoLogin).click();
+    }
+
 }
