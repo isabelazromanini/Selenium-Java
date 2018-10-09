@@ -11,7 +11,7 @@ public class telaLogin {
 
     private By usuarioCampoLogin = By.name("username") ;
     private By senhaCampoLogin = By.name("password");
-    private By botaoLogin = By.xpath("/html/body/div/div[2]/form/div/div/span/button/text()");
+    private By botaoLogin = By.xpath("/html/body/div/div[2]/form/div/div/span/button");
     public  By erroLogin = By.xpath("/html/body/div/div[2]");
 
     public telaLogin(WebDriver driver){
