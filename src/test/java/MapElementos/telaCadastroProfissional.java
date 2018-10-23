@@ -9,13 +9,13 @@ public class telaCadastroProfissional {
 
     public WebDriver driver;
 
-    private By botaoAdicionarProfissional = By.xpath("/html/body/div[2]/div[1]/section[1]/div/a/i");
+    private By botaoAdicionarProfissional = By.xpath("/html/body/div[2]/div[1]/section[1]/div/a");
     private By campoNome = By.name("nome");
     private By campoQuantidadeRetorno = By.id("maxRetornoDia");
     private By campoAssociarUsuario = By.xpath("//*[@id=\"usuario\"]");
     private By botaoUsuarioCompartilhado = By.xpath("//*[@id=\"formProfissional\"]/div[1]/div[2]/div[4]/div/div/div/span[1]");
     private By botaoUsuarioEspecifico = By.xpath("//*[@id=\"formProfissional\"]/div[1]/div[2]/div[4]/div/div/div/span[3]");
-    private By campoDiaSemana = By.xpath("//*[@id=\"formProfissional\"]/div[2]/div[1]/div/div[2]/div[1]/div[1]/span/span[1]/span/ul/li/input"); //ver com o sullivan como fazer
+    private By campoDiaSemana = By.xpath("//*[@id=\"formProfissional\"]/div[2]/div[1]/div/div[2]/div[1]/div[1]/span/span[1]/span/ul/li/input");
     private By campoHoraInicio = By.id("horaInicio");
     private By campoHoraFim = By.id("horaFim");
     private By botaoDiaJornadaEspecifico = By.xpath("//*[@id=\"formProfissional\"]/div[2]/div[1]/div/div[2]/div[3]/div[1]/div/div/div/span[1]");
@@ -54,7 +54,10 @@ public class telaCadastroProfissional {
 
     public void clickUsuarioEspecifico (){driver.findElement(botaoUsuarioEspecifico).click();}
 
-    public void digitaDiaSemana (){}//ver com o sullivan
+    public void digitaDiaSemana (String diaSemana){
+        Select dropdown = new Select(driver.findElement(campoDiaSemana));
+        dropdown.selectByVisibleText(diaSemana);
+    }
 
     public void digitaHoraInicio (String campoHoraInicioDigitado){
         driver.findElement(campoHoraInicio).clear();
@@ -72,7 +75,10 @@ public class telaCadastroProfissional {
 
     public void clickJornadaAdicionar(){driver.findElement(botaoJornadaAdicionar).click();}
 
-    public void digitaCampoAtendimento (){}//ver com o sullivan
+    public void digitaCampoAtendimento (String atendimento){
+     Select dropdown  = new Select(driver.findElement(campoAtendimento));
+     dropdown.selectByVisibleText(atendimento);
+    }
 
     public void digitaTempoAtendimento (String campoTempoAtendimentoDigitado){
         driver.findElement(campoTempoAtendimento).clear();
@@ -86,7 +92,10 @@ public class telaCadastroProfissional {
 
     public void clickBotaoAssociar (){driver.findElement(botaoAssociarAtendimento).click();}
 
-    public void digitaCampoConvenio (){}//ver com o sullivan
+    public void digitaCampoConvenio (String convenio){
+        Select dropdown  = new Select(driver.findElement(campoConvenio));
+        dropdown.selectByVisibleText(convenio);
+    }//ver com o sullivan
 
     public void digitaMaximaDia (String campoMaximaDiaDigitado){
         driver.findElement(campoMaximaDia).clear();

@@ -2,10 +2,11 @@ package MapElementos;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Test;
+import org.testng.Assert;
 
 public class telaLogin {
+
+
 
     private WebDriver driver;
 
@@ -13,6 +14,8 @@ public class telaLogin {
     private By senhaCampoLogin = By.name("password");
     private By botaoLogin = By.xpath("/html/body/div/div[2]/form/div/div/span/button");
     public  By erroLogin = By.xpath("/html/body/div/div[2]");
+
+
 
     public telaLogin(WebDriver driver){
         this.driver = driver;
@@ -47,5 +50,24 @@ public class telaLogin {
         driver.findElement(senhaCampoLogin).sendKeys(senha);
         driver.findElement(botaoLogin).click();
     }
+
+    /*public void mensagemErro() {
+        String msgErroExibido;
+        String msgErroEsperado;
+        msgErroExibido = driver.findElement(erroLogin).getText();
+        msgErroEsperado = "O e-mail e/ou senha não conferem";
+        Assert.assertEquals(msgErroExibido, msgErroEsperado);
+        System.out.println(msgErroExibido);
+        System.out.println(msgErroEsperado);
+
+    }*/
+
+    public String mensagemErro() {
+        String msgErroEsperado;
+        msgErroEsperado = driver.findElement(erroLogin).getText();
+        System.out.println(msgErroEsperado);
+        return msgErroEsperado;
+    }
+
 
 }

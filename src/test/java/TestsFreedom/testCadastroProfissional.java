@@ -32,7 +32,33 @@ public class testCadastroProfissional {
 
         @Test(description = "fazer login teste")
         public void cadastroProfissional () {
-        telaCadastroProfissional telaCadastroProfissional = new telaCadastroProfissional(driver);
+            telaHome telaHome = new telaHome(driver);
+            telaHome.clickCadastro();
+            telaHome.clickCadastroProfissional();
+
+            telaCadastroProfissional telaCadastroProfissional = new telaCadastroProfissional(driver);
+            telaCadastroProfissional.clickBotaoAdicionarProfissional();
+            telaCadastroProfissional.digitaCampoNome("Isabela Teste Teste");
+            telaCadastroProfissional.digitaCampoQuantidadeRetorno("3");
+            telaCadastroProfissional.associarUsuario("Elivelton Repolho");
+            telaCadastroProfissional.clickUsuarioEspecifico();
+            telaCadastroProfissional.digitaDiaSemana("Segunda-feira");
+            telaCadastroProfissional.digitaDiaSemana("Terça-feira");
+            telaCadastroProfissional.digitaDiaSemana("Quarta-feira");
+            telaCadastroProfissional.digitaHoraInicio("09:00");
+            telaCadastroProfissional.digitaHoraFim("18:00");
+            telaCadastroProfissional.clickDiaJornadaEspecifico();
+            telaCadastroProfissional.clickJornadaAdicionar();
+            telaCadastroProfissional.digitaCampoAtendimento("BOTOX");
+            telaCadastroProfissional.digitaTempoAtendimento("01:00");
+            telaCadastroProfissional.digitaValorAtendimento("10,00");
+            telaCadastroProfissional.clickBotaoAssociar();
+            telaCadastroProfissional.digitaCampoConvenio("Unimed");
+            telaCadastroProfissional.digitaMaximaDia("5");
+            telaCadastroProfissional.clickAssociarConvenio();
+            telaCadastroProfissional.clickSalvarProfissional();
+
+
 
     }
 
